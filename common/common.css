@@ -1,0 +1,400 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Top Alert Bar */
+.top-alert-bar {
+    background: #2d3e50;
+    color: white;
+    padding: 8px 0;
+    font-size: 0.9em;
+}
+
+.top-alert-bar .container {
+    justify-content: space-between;
+}
+
+.top-alert-bar i {
+    margin-right: 5px;
+}
+
+.top-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: color 0.3s;
+}
+
+.top-links a:hover {
+    color: #f39c12;
+}
+
+/* Main Header */
+.main-header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header > .container {
+    padding: 15px 20px;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 30px;
+}
+
+/* Vehicle Type Dropdown */
+.vehicle-type-dropdown {
+    position: relative;
+    margin-right: 30px;
+}
+
+.dropdown-btn {
+    background: #f8f9fa;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+}
+
+.dropdown-btn i {
+    margin-left: 8px;
+    font-size: 0.8em;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    padding: 20px;
+    width: 600px;
+    z-index: 1000;
+}
+
+.vehicle-type-dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.dropdown-column {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.dropdown-column h4 {
+    color: #2d3e50;
+    margin-bottom: 12px;
+    font-size: 0.9em;
+}
+
+.dropdown-column a {
+    display: block;
+    color: #666;
+    text-decoration: none;
+    padding: 8px 0;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+.dropdown-column a:hover {
+    color: #f39c12;
+}
+
+/* Search Bar */
+.search-bar {
+    flex: 1;
+    margin: 0 30px;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 0.9em;
+    padding-right: 45px;
+}
+
+.search-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+}
+
+/* User Actions */
+.user-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.action-item i {
+    font-size: 1.2em;
+    margin-bottom: 3px;
+}
+
+.action-item span {
+    font-size: 0.8em;
+}
+
+.action-item.highlight {
+    color: #f39c12;
+}
+
+/* Main Navigation */
+.main-nav {
+    border-top: 1px solid #eee;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 15px 0;
+    display: block;
+    position: relative;
+    font-size: 0.9em;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #f39c12;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Auth Modal Styles */
+.auth-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.form-tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eee;
+}
+
+.form-switch-btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.form-switch-btn.active {
+    color: #f39c12;
+    border-bottom: 2px solid #f39c12;
+    margin-bottom: -2px;
+}
+
+.auth-form {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 15px;
+    background: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.auth-btn:hover {
+    background: #e67e22;
+}
+
+.auth-links {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.auth-links a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.auth-links a:hover {
+    color: #f39c12;
+}
+
+
+/* Responsive Design (Basic) */
+@media (max-width: 768px) {
+    .container {
+        flex-wrap: wrap;
+    }
+    
+    .vehicle-type-dropdown,
+    .search-bar,
+    .user-actions {
+        display: none;
+    }
+    
+    .logo {
+        margin: 0 auto;
+    }
+}
+/* Responsive Design (Advanced) */
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-links a {
+        margin-bottom: 10px;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .dropdown-content {
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    .dropdown-column {
+        padding: 0;
+    }
+
+    .search-bar {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .vehicle-type-dropdown,
+    .search-bar,
+    .user-actions {
+        display: none;
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
